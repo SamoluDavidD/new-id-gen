@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* ===== Navbar ===== */
+header {
+  background: #111;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: #00bcd4;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00bcd4;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 60vh;
+  background: url('portfolio-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+}
+
+.hero-content span {
+  color: #00bcd4;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* ===== Skills Section ===== */
+.skills-section {
+  padding: 100px 5%;
+  background: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.skill h3 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 12px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
+  border-radius: 25px;
+  width: 0%;
+  transition: width 2s ease-in-out;
+}
+
+/* ===== Hover Glow ===== */
+.skill:hover h3 {
+  color: #00bcd4;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+
+
+
+
+
+/* ===== Horizontal Photo Marquee ===== */
+.photo-marquee {
+  overflow: hidden;
+  background: #f0f0f0;
+  padding: 20px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: calc(200%); /* double width for seamless loop */
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .marquee-track img {
+    width: 120px;
+    height: 80px;
+    margin-right: 15px;
+  }
+}
+
+
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: #111;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
