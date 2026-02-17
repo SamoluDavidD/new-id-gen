@@ -6,6 +6,13 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
+// Close menu when a link is clicked (for better UX on mobile)
+navLinks.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {   
+    navLinks.classList.remove('active');
+  } 
+});
+
 // ===== Fade-in Animation on Scroll =====
 const projectCards = document.querySelectorAll('.project-card');
 
