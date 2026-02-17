@@ -35,3 +35,13 @@ const observer = new IntersectionObserver((entries) => {
 revealElements.forEach(el => {
   observer.observe(el);
 }); 
+
+// ===== Page Loader =====
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  loader.classList.add('fade-out');
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 500); // Match this duration with the CSS animation duration
+}); 
+
